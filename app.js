@@ -1,11 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-const signingKey = require('./config/keys');
-const validateToken = require('./routes/GetAuthentication');
-const auth = require('../src/routes/getJwt');
-const login = require('./routes/login');
-const register = require('./routes/register');
+const signingKey = require('./src/config/keys');
+const validateToken = require('./src/routes/GetAuthentication');
+const auth = require('./src/routes/getJwt');
+const login = require('./src/routes/login');
+const register = require('./src/routes/register');
 const cors = require('cors');
 // const getUserInfo = require('./routes/getUserInfo');
 
