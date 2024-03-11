@@ -28,7 +28,7 @@ class userData {
       });
     }
     static addGrua(grua, clienteId, callback) {
-      const query = "INSERT INTO Gruas (marca, modelo, capacidad, foto_path, cliente_id ) VALUES (?, ?, ?, ?, ?)";
+      const query = "INSERT INTO gruas (marca, modelo, capacidad, foto_path, cliente_id ) VALUES (?, ?, ?, ?, ?)";
       const values = [grua.marca, grua.modelo, grua.capacidad, grua.foto_path, clienteId];
     
       database.query(query, values, (err, result) => {
@@ -44,7 +44,7 @@ class userData {
     }
   
     static obtenerInformacionUsuario(id, callback) {
-      const query = 'SELECT * FROM Clients WHERE id = ?';
+      const query = 'SELECT * FROM clients WHERE id = ?';
       database.query(query, [id], (err, result) => {
         if (err) {
           console.error('Error al obtener la información del usuario: ' + err.message);
@@ -74,7 +74,7 @@ class userData {
     }
   
     static obtenerGruas(callback) {
-      const query = 'SELECT * FROM Gruas';
+      const query = 'SELECT * FROM gruas';
   
       database.query(query, (err, result) => {
         if (err) {
