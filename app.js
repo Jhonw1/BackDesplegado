@@ -1,13 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-const signingKey = require('./config/keys');
-const validateToken = require('./routes/GetAuthentication');
-const auth = require('../src/routes/getJwt');
-const login = require('./routes/login');
-const register = require('./routes/register');
-const gruasRoutes = require('./routes/gruasRutes');
-const getGruasInfoRoute = require('./routes/getGruasInfo');
+const signingKey = require('./src/config/keys');
+const validateToken = require('./src/routes/GetAuthentication');
+const auth = require('./src/routes/getJwt');
+const login = require('./src/routes/login');
+const register = require('./src/routes/register');
+const gruasRutes = require('./src/routes/gruasRutes');
+const getGruasInfoRoute = require('./src/routes/getGruasInfo');
 const cors = require('cors');
 
 const app = express().use(cors()).use(bodyParser.json()).use(cookieParser(signingKey.SIGNING_KEY_COOKIE));
@@ -23,7 +23,7 @@ app.use((req, res, next) => {
 app.use('/register', register);
 app.use('/login', login);
 app.use('/readToken', validateToken);
-app.use('/gruas', gruasRoutes);
+app.use('/gruas', gruasRutes);
 app.use('/getGruasInfo', getGruasInfoRoute);
 
 const PORT = process.env.PORT ?? 3000;
