@@ -28,8 +28,8 @@ class userData {
       });
     }
     static addGrua(grua, clienteId, callback) {
-      const query = "INSERT INTO gruas (marca, modelo, capacidad, foto_path, cliente_id ) VALUES (?, ?, ?, ?, ?)";
-      const values = [grua.marca, grua.modelo, grua.capacidad, grua.foto_path, clienteId];
+      const query = "INSERT INTO gruas (marca, modelo, capacidad, whatsapp, foto_path, cliente_id ) VALUES (?, ?, ?, ?, ?, ?)";
+      const values = [grua.marca, grua.modelo, grua.capacidad, grua.whatsapp, grua.foto_path, clienteId];
     
       database.query(query, values, (err, result) => {
         if (err) {
